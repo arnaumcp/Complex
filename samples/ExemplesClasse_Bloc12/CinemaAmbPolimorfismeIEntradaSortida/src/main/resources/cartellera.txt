@@ -1,0 +1,24 @@
+Títol n
+Actors n
+100
+Idioma n
+NOVETAT
+
+Títol r1
+Actors r1
+90
+Idioma r1
+REPOSICIO actual
+
+Títol r2
+Actors r2
+90
+Idioma r2
+REPOSICIO anteriors
+
+Títol g
+Actors g
+90
+Idioma g
+GRATUITA
+

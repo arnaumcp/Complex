@@ -1,0 +1,65 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package principal;
+
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ *
+ * @author user
+ */
+public class Main
+{
+    private List<CuaPaquets> cues;
+    
+    public Main()
+    {
+        this.cues = new ArrayList<>();
+        for (int i = 1; i <= 3; i++)
+            this.cues.add(new FIFO(i, 5000));   //Es poden crear també
+    }                                           //de tipus LIFO o SIRO
+    
+    public void mostrarCues()
+    {
+        for (CuaPaquets cua : this.cues)
+        {
+            System.out.println(cua.toString() + "\n");
+        }
+    }
+    
+    public static void main(String[] args)
+    {
+        Main m = new Main();
+        m.start();
+    }
+    
+    public void start()
+    {
+        Paquet p1 = new Paquet(1, 1, 1500);
+        Paquet p2 = new Paquet(2, 1, 1500);
+        Paquet p3 = new Paquet(3, 1, 1500);
+        Paquet p4 = new Paquet(4, 1, 1500);     //Aquest no hi cap!
+        
+        System.out.println(this.cues.get(0).afegeixPaquet(p1));
+        System.out.println(this.cues.get(0).afegeixPaquet(p2));
+        System.out.println(this.cues.get(0).afegeixPaquet(p3));
+        System.out.println(this.cues.get(0).afegeixPaquet(p4));
+        System.out.println();
+        
+        this.mostrarCues();
+        
+        System.out.println();
+        System.out.println();
+        
+        //Sortirà el primer que havia arribat si FIFO, o el darrer que
+        //havia arribat si LIFO, o un a l'atzar si SIRO
+        this.cues.get(0).extreu();
+        
+        this.mostrarCues();
+        
+    }
+}
