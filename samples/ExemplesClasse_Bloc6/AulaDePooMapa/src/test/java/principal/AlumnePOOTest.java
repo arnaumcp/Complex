@@ -17,7 +17,7 @@ public class AlumnePOOTest {
 
         // Then: l'alumne recorda la seva nota
         Assert.assertEquals(
-                17.5,
+                 7.5,
                  arnau.getLaboratori(),
                  0.1
         );
